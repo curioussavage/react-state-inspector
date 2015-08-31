@@ -1,6 +1,6 @@
 {
   "name": "react-state-inspector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple component for analyzing a parent components state",
   "main": "src/index.jsx",
   "repository": {
