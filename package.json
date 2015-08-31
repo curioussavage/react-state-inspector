@@ -2,13 +2,33 @@
   "name": "react-state-inspector",
   "version": "1.0.0",
   "description": "A simple component for analyzing a parent components state",
-  "main": "index.js",
+  "main": "src/index.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "keywords": [
     "react"
   ],
   "author": "curioussavage",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-jsx": "^0.13.3",
+    "react": "^0.13.3",
+    "react-json-tree": "^0.1.3"
+  },
+  "devDependencies": {
+    "babel": "^5.1.9",
+    "babel-core": "^5.1.9",
+    "babel-loader": "^5.0.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-cli": "0.0.4",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-mocha": "^0.1.10",
+    "karma-sourcemap-loader": "^0.3.4",
+    "karma-webpack": "^1.5.0",
+    "mocha": "^2.2.4",
+    "webpack": "^1.8.4",
+    "webpack-dev-server": "^1.8.0"
+  }
 }

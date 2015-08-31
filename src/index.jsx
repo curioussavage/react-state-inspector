@@ -1,4 +1,15 @@
 var React = require('react');
+var JSONTree = require('react-json-tree');
+
+
+var styles = {
+  container: {
+    backgroundColor: 'white',
+    padding: '10px',
+    maxHeight: '300px',
+    overflow: 'scroll'
+  }
+};
 
 var Debugger = React.createClass({
 
@@ -59,7 +70,10 @@ var Debugger = React.createClass({
     if (isDragging) {
     	var pastStates = this.state.pastStates;
 	   	var newState = pastStates[pastStates.length - 1];
-		  this.props.updateParentState(newState);
+      if (this.props.updateParentState) {
+        this.props.updateParentState(newState);  
+      }
+		  
     }
 
     this.setState({isDragging: !isDragging});
@@ -75,7 +89,7 @@ var Debugger = React.createClass({
     var preval = isDragging ? pastStates[sliderVal] : this.props.state;
 
     return (
-      <div style={ {backgroundColor: 'white', padding: '10px'} }>
+      <div style={ styles.container }>
       <label>
         rewind mode {' '}
         <input
@@ -92,7 +106,7 @@ var Debugger = React.createClass({
           value={ sliderPosition }
           onChange={ this.handleSliderChange }
         />
-        <pre>{JSON.stringify(preval, null, 2)}</pre>
+        <JSONTree data={preval} />        
       </div>
     )
   }
