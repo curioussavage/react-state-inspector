@@ -37,18 +37,17 @@ var StateInspector = React.createClass({
 
   },
   
-  componentWillReceiveProps: function(nextProps) {
-    if (this.state.isDragging) {
-      return;
-    }
-      
-    var states = this.state.pastStates;
+  componentWillReceiveProps: function(nextProps) {      
+    var states = this.state.pastStates.concat([nextProps.state]);
+    var newState = {
+      pastStates: states
+    };
 
-    states.push(this.props.state);
-    this.setState({
-      sliderVal: states.length - 1, 
-      pastStates: states,
-    });
+    if (!this.state.isDragging) {
+      newState.sliderVal = states.length - 1;
+    }
+
+    this.setState(newState);
   },
   
   handleSliderChange: function() {
