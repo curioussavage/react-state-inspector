@@ -43,7 +43,7 @@ var Debugger = React.createClass({
     }
       
     var states = this.state.pastStates;
-    // maybe cut out some if too long
+
     states.push(this.props.state);
     this.setState({
       sliderVal: states.length - 1, 
@@ -78,7 +78,7 @@ var Debugger = React.createClass({
 
     this.setState({isDragging: !isDragging});
   },
-  // [0,1,2,3]
+
   render: function() {
     var pastStates = this.state.pastStates;
     var sliderVal = this.state.sliderVal;
