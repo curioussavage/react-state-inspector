@@ -11,7 +11,7 @@ var styles = {
   }
 };
 
-var Debugger = React.createClass({
+var StateInspector = React.createClass({
 
 	propTypes: {
 		updateParentState: React.PropTypes.func,
@@ -112,4 +112,4 @@ var Debugger = React.createClass({
   }
 });
 
-module.exports = Debugger;
+module.exports = StateInspector;

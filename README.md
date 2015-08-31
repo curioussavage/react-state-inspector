@@ -6,7 +6,7 @@ example usage:
 
 ```javascript
 var React = require('react');
-var Debugger = require('react-state-inspector');
+var StateInspector = require('react-state-inspector');
 
 var MyComponent = React.createClass({
 getInitialState: function () {
@@ -23,7 +23,7 @@ updateState: function(state) {
 render: function() {
   return (
     <div>
-      <Debugger state={ this.state } updateParentState={this.updateState} />
+      <StateInspector state={ this.state } updateParentState={this.updateState} />
     </div>
   )
 }
