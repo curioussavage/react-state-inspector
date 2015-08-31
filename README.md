@@ -16,14 +16,23 @@ getInitialState: function () {
   }
 },
 
+updateState: function(state) {
+  this.setState(state);
+},
+
 render: function() {
   return (
     <div>
-      <Debugger state={ this.state }  />
+      <Debugger state={ this.state } updateParentState={this.updateState} />
     </div>
   )
 }
 ...
 ```
 
-Has limited use cases but thats about as easy as it gets. Mostly an experiment to help me wrap my mind around the possiblitiess of React and one way data flow/flux.
+## Accepted props: 
+
+`state` and optionally `updateParentState` which is a method to simply replace the parents state with past states which are saved in an array.
+
+
+Has limited use cases but thats about as easy as it gets. Mostly an experiment to help me wrap my mind around the possiblitiess of React and one way data flow/flux. Thank you to Ryan florence and Michael Jackson for inspiration!
